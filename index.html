@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pequeños Ayudantes - Aula Limpia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="top-bar">
+            <div id="score-panel">⭐ Estrellas: <span id="stars">0</span></div>
+            <button class="btn-reset" onclick="location.reload()">🔄 Reiniciar</button>
+        </div>
+
+        <div id="main-play-area">
+            <div id="start-screen" class="screen active">
+                <h1 class="title">Pequeños Ayudantes</h1>
+                <button class="btn-large" onclick="game.startGame()">¡EMPEZAR!</button>
+            </div>
+
+            <div id="level-1" class="screen">
+                <h2 class="mission-title">Misión 1: ¡Limpia el suelo!</h2>
+                <div class="game-scene">
+                    <span class="game-object item" onclick="game.collectItem(this)">🍌</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🥫</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📄</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🥡</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🥤</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🍫</span>
+                    <div class="fixed-target">🗑️</div>
+                </div>
+            </div>
+
+            <div id="level-2" class="screen">
+                <h2 class="mission-title">Misión 2: ¡Guarda todo!</h2>
+                <div class="game-scene">
+                    <span class="game-object item" onclick="game.collectItem(this)">✏️</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🎨</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📏</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🖍️</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">✂️</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📓</span>
+                    <div class="fixed-target">🎒</div>
+                </div>
+            </div>
+
+            <div id="level-3" class="screen">
+                <h2 class="mission-title">Misión 3: ¡Ayuda a tu amigo!</h2>
+                <div class="game-scene">
+                    <span class="game-object item" onclick="game.collectItem(this)">📚</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📗</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📘</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📙</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📕</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">📖</span>
+                    <div class="fixed-target">🙇‍♂️</div>
+                </div>
+            </div>
+
+            <div id="level-4" class="screen">
+                <h2 class="mission-title">Misión 4: ¡A jugar juntos!</h2>
+                <div class="game-scene">
+                    <span class="game-object item" onclick="game.collectItem(this)">🧸</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">⚽</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🚗</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🧩</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🪁</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">🚂</span>
+                    <div class="fixed-target">🧒🏽👧🏻</div>
+                </div>
+            </div>
+
+            <div id="level-5" class="screen">
+                <h2 class="mission-title">Misión 5: ¡Riega las flores!</h2>
+                <div class="game-scene">
+                    <span class="game-object item" onclick="game.collectItem(this)">💧</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">💧</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">💧</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">💧</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">💧</span>
+                    <span class="game-object item" onclick="game.collectItem(this)">💧</span>
+                    <div class="flowers-base">
+                        <span>🌻</span>
+                        <span>🌻</span>
+                        <span>🌻</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="end-screen" class="screen">
+                <h1 class="title">¡LO LOGRASTE!</h1>
+                <div style="font-size: 100px;">🏆</div>
+                <p id="final-msg"></p>
+                <button class="btn-large" onclick="location.reload()">¡OTRA VEZ!</button>
+            </div>
+        </div>
+
+        <div id="character-area">
+            <div id="char-avatar"><span id="char-emoji">❓</span></div>
+            <div id="dialogue-box"><span id="text-speech">¡Hola!</span></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
